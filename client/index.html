@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng:app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body ng-controller="myCtrl">
+	<form >
+		<label for="file">ONLY EXCEPTS .xlsx format Excel sheets</label>
+	  <input type="file" class="btn" ngf-pattern="'.xlsx'" ngf-select ng-model="file" name="file">
+	  <button type="submit" ng-click="submit()">submit</button>
+	</form>
+	<table>
+		<tbody>
+			<tr ng:repeat="row in sheet.sheet">
+				<td ng:repeat="cell in row" ng:bind="cell"></td>
+			</tr>
+		</tbody>
+	</table>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-route.min.js"></script>
+	<script src="/javascripts/scripts.js"></script>
+	<!-- Controllers -->
+	<script src="/javascripts/controllers/myController.js"></script>
+	<!-- angular-file-upload -->
+	<script src="/node_modules/ng-file-upload/dist/ng-file-upload.js"></script>
+	<script src="/node_modules/ng-file-upload/dist/ng-file-upload-shim.js"></script>
+</body>
+</html>
