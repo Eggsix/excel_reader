@@ -3,7 +3,7 @@ myApp.controller('myCtrl', ['$scope', 'Upload', function ($scope, Upload, myFact
     $scope.submit = function() {
         $scope.upload($scope.file, function(data) {
         	$scope.sheet = data;
-        	console.log($scope.sheet);
+            console.log(data.sheet);
         });
     };
  
